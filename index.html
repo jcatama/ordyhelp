@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JSON Parser</title>
+    <script>
+    function parse() {
+        let jsonString = document.getElementById('jsonString').value;
+        const inscriptions = JSON.parse(jsonString);
+        let results = ''
+        for (i in inscriptions) {
+            results += inscriptions[i]['id'] + '\r\n'
+        }
+        document.getElementById('result').value = results
+    }
+    </script>
+</head>
+<body>
+    <h1>JSON Parser</h1>
+    <textarea id="jsonString" rows="10" cols="80" placeholder="Enter JSON string"></textarea>
+    <br>
+    <button onclick="parse()">Parse JSON</button>
+    <br><br>
+    <textarea id="result" rows="50" cols="80" placeholder=""></textarea>
+</body>
+</html>
